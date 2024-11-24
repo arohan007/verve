@@ -1,6 +1,8 @@
 package handlers
 
 import (
+	"bytes"
+	"encoding/json"
 	"log"
 	"net/http"
 	"strconv"
@@ -16,6 +18,12 @@ var (
 	uniqueCount     int
 	uniqueCountLock sync.Mutex
 )
+
+// Data structure for the POST request payload
+type EndpointPayload struct {
+	UniqueCount int    `json:"unique_count"`
+	Message     string `json:"message"`
+}
 
 // HandleAccept processes the /api/verve/accept endpoint
 func HandleAccept(logger *log.Logger) gin.HandlerFunc {
@@ -66,20 +74,31 @@ func StartUniqueCountTracker(logger *log.Logger) {
 	}
 }
 
-// fireEndpointRequest sends a GET request to the provided endpoint with unique count
+// fireEndpointRequest sends a POST request to the provided endpoint with unique count in the body
 func fireEndpointRequest(endpoint string, logger *log.Logger) {
 	uniqueCountLock.Lock()
 	currentCount := uniqueCount
 	uniqueCountLock.Unlock()
 
-	// Send HTTP GET request
-	resp, err := http.Get(endpoint + "?uniqueCount=" + strconv.Itoa(currentCount))
+	// Prepare the payload
+	payload := EndpointPayload{
+		UniqueCount: currentCount,
+		Message:     "Unique request count for the current minute",
+	}
+	payloadBytes, err := json.Marshal(payload)
 	if err != nil {
-		logger.Printf("Failed to send request to endpoint: %v\n", err)
+		logger.Printf("Failed to marshal payload: %v\n", err)
+		return
+	}
+
+	// Send the POST request
+	resp, err := http.Post(endpoint, "application/json", bytes.NewBuffer(payloadBytes))
+	if err != nil {
+		logger.Printf("Failed to send POST request to endpoint: %v\n", err)
 		return
 	}
 	defer resp.Body.Close()
 
 	// Log the response status
-	logger.Printf("Endpoint request sent, response status: %d\n", resp.StatusCode)
+	logger.Printf("POST request sent to %s, response status: %d\n", endpoint, resp.StatusCode)
 }
