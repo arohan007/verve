@@ -2,9 +2,11 @@ package handlers
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"log"
 	"net/http"
+	"projects/verve/utils"
 	"strconv"
 	"sync"
 	"time"
@@ -40,15 +42,24 @@ func HandleAccept(logger *log.Logger) gin.HandlerFunc {
 			return
 		}
 
-		// Update unique request count
-		uniqueCountLock.Lock()
-		if _, exists := uniqueIDs[id]; !exists {
-			uniqueIDs[id] = struct{}{}
-			uniqueCount++
+		// Use Redis to ensure deduplication
+		ctx := context.Background()
+		redisKey := "unique_ids"
+		added, err := utils.RedisClient.SAdd(ctx, redisKey, id).Result()
+		if err != nil {
+			logger.Printf("Error accessing Redis: %v\n", err)
+			c.JSON(http.StatusInternalServerError, gin.H{"status": "failed", "error": "internal server error"})
+			return
 		}
-		uniqueCountLock.Unlock()
 
-		// Optional: Send a GET request to the provided endpoint
+		if added == 0 {
+			// ID already exists
+			logger.Printf("Duplicate ID detected: %d\n", id)
+		} else {
+			logger.Printf("Unique ID added: %d\n", id)
+		}
+
+		// Optional: Send a POST request to the provided endpoint
 		if endpoint != "" {
 			go fireEndpointRequest(endpoint, logger)
 		}
@@ -60,19 +71,31 @@ func HandleAccept(logger *log.Logger) gin.HandlerFunc {
 
 // StartUniqueCountTracker logs and resets the unique request count every minute
 func StartUniqueCountTracker(logger *log.Logger) {
-	for range time.Tick(1 * time.Minute) {
-		uniqueCountLock.Lock()
+	ticker := time.NewTicker(1 * time.Minute)
+	defer ticker.Stop()
 
-		// Log unique request count
+	for range ticker.C {
+		ctx := context.Background()
+		redisKey := "unique_ids"
+
+		// Get unique count
+		uniqueCount, err := utils.RedisClient.SCard(ctx, redisKey).Result()
+		if err != nil {
+			logger.Printf("Error accessing Redis: %v\n", err)
+			continue
+		}
+
+		// Log the unique count
 		logger.Printf("Unique requests in the last minute: %d\n", uniqueCount)
 
-		// Reset unique IDs and count
-		uniqueIDs = make(map[int]struct{})
-		uniqueCount = 0
-
-		uniqueCountLock.Unlock()
+		// Reset the set
+		_, err = utils.RedisClient.Del(ctx, redisKey).Result()
+		if err != nil {
+			logger.Printf("Error resetting Redis key: %v\n", err)
+		}
 	}
 }
+
 
 // fireEndpointRequest sends a POST request to the provided endpoint with unique count in the body
 func fireEndpointRequest(endpoint string, logger *log.Logger) {
