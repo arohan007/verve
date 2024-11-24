@@ -11,6 +11,9 @@ func main() {
 	// Initialize logger
 	logger := utils.InitLogger("requests.log")
 
+	// Initialize Redis
+	utils.InitializeRedis("localhost:6379") // Replace with your Redis address
+
 	// Start unique request tracking in the background
 	go handlers.StartUniqueCountTracker(logger)
 
