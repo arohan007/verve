@@ -157,3 +157,121 @@
 2024/11/24 17:51:56 Unique requests in the last minute: 1
 2024/11/24 17:52:56 Unique requests in the last minute: 0
 2024/11/24 17:53:56 Unique requests in the last minute: 0
+2024/11/24 17:54:56 Unique requests in the last minute: 0
+2024/11/24 17:55:56 Unique requests in the last minute: 0
+2024/11/24 17:56:56 Unique requests in the last minute: 0
+2024/11/24 17:57:56 Unique requests in the last minute: 0
+2024/11/24 17:58:56 Unique requests in the last minute: 0
+2024/11/24 17:59:56 Unique requests in the last minute: 0
+2024/11/24 18:00:56 Unique requests in the last minute: 0
+2024/11/24 18:01:56 Unique requests in the last minute: 0
+2024/11/24 18:02:56 Unique requests in the last minute: 0
+2024/11/24 18:04:10 Unique requests in the last minute: 0
+2024/11/24 18:05:10 Unique requests in the last minute: 0
+2024/11/24 18:05:56 Unique requests in the last minute: 0
+2024/11/24 18:06:56 Unique requests in the last minute: 0
+2024/11/24 18:07:56 Unique requests in the last minute: 0
+2024/11/24 18:08:56 Unique requests in the last minute: 0
+2024/11/24 18:09:56 Unique requests in the last minute: 0
+2024/11/24 18:10:56 Unique requests in the last minute: 0
+2024/11/24 18:11:56 Unique requests in the last minute: 0
+2024/11/24 18:12:56 Unique requests in the last minute: 0
+2024/11/24 18:13:56 Unique requests in the last minute: 0
+2024/11/24 18:15:10 Unique requests in the last minute: 0
+2024/11/24 18:16:10 Unique requests in the last minute: 0
+2024/11/24 18:16:56 Unique requests in the last minute: 0
+2024/11/24 18:17:56 Unique requests in the last minute: 0
+2024/11/24 18:18:56 Unique requests in the last minute: 0
+2024/11/24 18:19:56 Unique requests in the last minute: 0
+2024/11/24 18:20:56 Unique requests in the last minute: 0
+2024/11/24 18:21:56 Unique requests in the last minute: 0
+2024/11/24 18:22:56 Unique requests in the last minute: 0
+2024/11/24 18:23:24 Starting server on :8080
+2024/11/24 18:24:25 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:25:24 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:26:24 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:27:24 Unique ID added: 2
+2024/11/24 18:27:24 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:28:24 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:29:24 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:30:24 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:31:24 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:32:24 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:33:25 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:34:25 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:35:25 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:36:24 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:37:24 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:38:14 Starting server on :8080
+2024/11/24 18:39:14 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:40:14 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:41:14 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:42:14 Failed to write message to Kafka: [3] Unknown Topic Or Partition: the request is for a topic or partition that does not exist on this broker
+2024/11/24 18:43:15 Published unique count to Kafka: {"timestamp":"2024-11-24T18:43:14Z","unique_count":0}
+2024/11/24 18:43:24 Unique ID added: 2
+2024/11/24 18:44:29 Published unique count to Kafka: {"timestamp":"2024-11-24T18:44:14Z","unique_count":1}
+2024/11/24 18:45:11 Unique ID added: 3
+2024/11/24 18:45:29 Published unique count to Kafka: {"timestamp":"2024-11-24T18:45:14Z","unique_count":1}
+2024/11/24 18:46:15 Published unique count to Kafka: {"timestamp":"2024-11-24T18:46:14Z","unique_count":0}
+2024/11/24 18:47:09 Unique ID added: 6
+2024/11/24 18:47:15 Published unique count to Kafka: {"timestamp":"2024-11-24T18:47:14Z","unique_count":1}
+2024/11/24 18:48:15 Published unique count to Kafka: {"timestamp":"2024-11-24T18:48:14Z","unique_count":0}
+2024/11/24 18:49:15 Published unique count to Kafka: {"timestamp":"2024-11-24T18:49:14Z","unique_count":0}
+2024/11/24 18:51:20 Published unique count to Kafka: {"timestamp":"2024-11-24T18:51:19Z","unique_count":0}
+2024/11/25 04:44:19 Published unique count to Kafka: {"timestamp":"2024-11-25T04:44:03Z","unique_count":0}
+2024/11/25 05:01:24 Published unique count to Kafka: {"timestamp":"2024-11-25T05:01:38Z","unique_count":0}
+2024/11/25 06:19:32 Published unique count to Kafka: {"timestamp":"2024-11-25T06:19:31Z","unique_count":0}
+2024/11/25 06:20:15 Published unique count to Kafka: {"timestamp":"2024-11-25T06:20:14Z","unique_count":0}
+2024/11/25 06:21:15 Published unique count to Kafka: {"timestamp":"2024-11-25T06:21:14Z","unique_count":0}
+2024/11/25 06:22:15 Published unique count to Kafka: {"timestamp":"2024-11-25T06:22:13Z","unique_count":0}
+2024/11/25 06:23:14 Published unique count to Kafka: {"timestamp":"2024-11-25T06:23:13Z","unique_count":0}
+2024/11/25 06:24:14 Published unique count to Kafka: {"timestamp":"2024-11-25T06:24:13Z","unique_count":0}
+2024/11/25 06:25:14 Published unique count to Kafka: {"timestamp":"2024-11-25T06:25:13Z","unique_count":0}
+2024/11/25 06:26:14 Published unique count to Kafka: {"timestamp":"2024-11-25T06:26:27Z","unique_count":0}
+2024/11/25 06:27:13 Published unique count to Kafka: {"timestamp":"2024-11-25T06:27:12Z","unique_count":0}
+2024/11/25 06:28:13 Published unique count to Kafka: {"timestamp":"2024-11-25T06:28:12Z","unique_count":0}
+2024/11/25 06:29:13 Published unique count to Kafka: {"timestamp":"2024-11-25T06:29:12Z","unique_count":0}
+2024/11/25 06:30:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:30:11Z","unique_count":0}
+2024/11/25 06:31:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:31:11Z","unique_count":0}
+2024/11/25 06:32:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:32:11Z","unique_count":0}
+2024/11/25 06:33:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:33:11Z","unique_count":0}
+2024/11/25 06:34:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:34:11Z","unique_count":0}
+2024/11/25 06:35:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:35:11Z","unique_count":0}
+2024/11/25 06:36:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:36:11Z","unique_count":0}
+2024/11/25 06:37:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:37:11Z","unique_count":0}
+2024/11/25 06:38:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:38:11Z","unique_count":0}
+2024/11/25 06:39:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:39:11Z","unique_count":0}
+2024/11/25 06:40:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:40:11Z","unique_count":0}
+2024/11/25 06:41:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:41:11Z","unique_count":0}
+2024/11/25 06:42:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:42:11Z","unique_count":0}
+2024/11/25 06:43:12 Published unique count to Kafka: {"timestamp":"2024-11-25T06:43:11Z","unique_count":0}
+2024/11/25 06:44:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:44:09Z","unique_count":0}
+2024/11/25 06:45:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:45:09Z","unique_count":0}
+2024/11/25 06:46:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:46:09Z","unique_count":0}
+2024/11/25 06:47:24 Published unique count to Kafka: {"timestamp":"2024-11-25T06:47:09Z","unique_count":0}
+2024/11/25 06:48:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:48:09Z","unique_count":0}
+2024/11/25 06:49:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:49:09Z","unique_count":0}
+2024/11/25 06:50:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:50:09Z","unique_count":0}
+2024/11/25 06:51:24 Published unique count to Kafka: {"timestamp":"2024-11-25T06:51:23Z","unique_count":0}
+2024/11/25 06:52:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:52:09Z","unique_count":0}
+2024/11/25 06:53:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:53:09Z","unique_count":0}
+2024/11/25 06:54:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:54:09Z","unique_count":0}
+2024/11/25 06:55:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:55:09Z","unique_count":0}
+2024/11/25 06:56:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:56:09Z","unique_count":0}
+2024/11/25 06:57:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:57:09Z","unique_count":0}
+2024/11/25 06:58:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:58:09Z","unique_count":0}
+2024/11/25 06:59:10 Published unique count to Kafka: {"timestamp":"2024-11-25T06:59:09Z","unique_count":0}
+2024/11/25 07:00:10 Published unique count to Kafka: {"timestamp":"2024-11-25T07:00:09Z","unique_count":0}
+2024/11/25 07:01:10 Published unique count to Kafka: {"timestamp":"2024-11-25T07:01:09Z","unique_count":0}
+2024/11/25 07:02:10 Published unique count to Kafka: {"timestamp":"2024-11-25T07:02:09Z","unique_count":0}
+2024/11/25 07:03:10 Published unique count to Kafka: {"timestamp":"2024-11-25T07:03:09Z","unique_count":0}
+2024/11/25 07:03:39 Unique ID added: 6
+2024/11/25 07:04:10 Published unique count to Kafka: {"timestamp":"2024-11-25T07:04:09Z","unique_count":1}
+2024/11/25 07:05:09 Published unique count to Kafka: {"timestamp":"2024-11-25T07:05:08Z","unique_count":0}
+2024/11/25 07:05:16 Unique ID added: 7
+2024/11/25 07:05:20 Unique ID added: 8
+2024/11/25 07:06:09 Published unique count to Kafka: {"timestamp":"2024-11-25T07:06:08Z","unique_count":2}
+2024/11/25 07:07:09 Published unique count to Kafka: {"timestamp":"2024-11-25T07:07:08Z","unique_count":0}
+2024/11/25 07:08:09 Published unique count to Kafka: {"timestamp":"2024-11-25T07:08:08Z","unique_count":0}
+2024/11/25 07:09:09 Published unique count to Kafka: {"timestamp":"2024-11-25T07:09:08Z","unique_count":0}
+2024/11/25 07:10:08 Published unique count to Kafka: {"timestamp":"2024-11-25T07:10:07Z","unique_count":0}
