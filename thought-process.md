@@ -15,7 +15,9 @@ Sends unique request counts to a distributed streaming system (Kafka).
 Fully containerized using Docker, including Redis, Kafka, and the service itself.
 
 `High-Level Design`
+
 1. `Service Architecture`
+
 `Core API`
 The /api/verve/accept endpoint is built using the Gin framework for high performance.
 Parameters:
@@ -40,18 +42,22 @@ Sends a POST request with the unique count and logs the response status code.
 
 
 2. `Extensions`
+
 `Extension`: `Deduplication Across Load Balancers`
 Redis is introduced as a distributed in-memory store.
 Each instance of the service writes the unique id into a Redis key with a 1-minute expiry (SET with TTL).
 Deduplication is achieved using Redis' atomic operations (SADD for sets).
+
 `Extension`: `Kafka Integration`
 Kafka is used to decouple processing from logging and real-time monitoring.
 Each service instance produces messages to a Kafka topic (unique-request-count).
+
 `Extension`: `Fully Containerized Deployment`
 Docker is used for creating containers for the service and dependencies (Redis, Kafka).
 Docker Compose simplifies managing the multi-container setup.
 
 `Design Choices`
+
 `Framework: Gin`
 Chosen for its lightweight and high-performance HTTP handling.
 Ideal for achieving the 10k requests/second benchmark.
