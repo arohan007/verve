@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"projects/verve/handlers"
 	"projects/verve/utils"
 
@@ -11,11 +12,15 @@ func main() {
 	// Initialize logger
 	logger := utils.InitLogger("requests.log")
 
+	// Read environment variables for Redis and Kafka addresses
+	redisAddr := os.Getenv("REDIS_ADDRESS")
+	kafkaBrokerAddr := os.Getenv("KAFKA_BROKER_ADDRESS")
+
 	// Initialize Redis
-	utils.InitializeRedis("localhost:6379") // Replace with your Redis address
+	utils.InitializeRedis(redisAddr) // Replace with your Redis address
 
 	// Initialize Kafka writer
-	kafkaWriter := utils.InitializeKafkaWriter("localhost:9092", "unique-ids-count")
+	kafkaWriter := utils.InitializeKafkaWriter(kafkaBrokerAddr, "unique-ids-count")
 	defer kafkaWriter.Close()
 
 	// Start unique request tracking in the background
