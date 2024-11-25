@@ -14,8 +14,12 @@ func main() {
 	// Initialize Redis
 	utils.InitializeRedis("localhost:6379") // Replace with your Redis address
 
+	// Initialize Kafka writer
+	kafkaWriter := utils.InitializeKafkaWriter("localhost:9092", "unique-ids-count")
+	defer kafkaWriter.Close()
+
 	// Start unique request tracking in the background
-	go handlers.StartUniqueCountTracker(logger)
+	go handlers.StartUniqueCountTracker(logger, kafkaWriter)
 
 	// Create a Gin router
 	r := gin.Default()

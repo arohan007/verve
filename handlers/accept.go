@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"projects/verve/utils"
@@ -69,8 +70,8 @@ func HandleAccept(logger *log.Logger) gin.HandlerFunc {
 	}
 }
 
-// StartUniqueCountTracker logs and resets the unique request count every minute
-func StartUniqueCountTracker(logger *log.Logger) {
+// StartUniqueCountTracker publishes the unique request count to Kafka every minute
+func StartUniqueCountTracker(logger *log.Logger, kafkaWriter *utils.KafkaWriter) {
 	ticker := time.NewTicker(1 * time.Minute)
 	defer ticker.Stop()
 
@@ -85,8 +86,16 @@ func StartUniqueCountTracker(logger *log.Logger) {
 			continue
 		}
 
-		// Log the unique count
-		logger.Printf("Unique requests in the last minute: %d\n", uniqueCount)
+		// Create the message to send to Kafka
+		message := fmt.Sprintf(`{"timestamp":"%s","unique_count":%d}`, time.Now().Format(time.RFC3339), uniqueCount)
+
+		// Publish the message to Kafka
+		err = kafkaWriter.WriteMessage("unique_ids", message)
+		if err != nil {
+			logger.Printf("Failed to write message to Kafka: %v\n", err)
+		} else {
+			logger.Printf("Published unique count to Kafka: %s\n", message)
+		}
 
 		// Reset the set
 		_, err = utils.RedisClient.Del(ctx, redisKey).Result()
