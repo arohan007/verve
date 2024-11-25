@@ -38,6 +38,7 @@ Logs the count of unique id values per minute using Go's log package.
 If an endpoint parameter is provided:
 Sends a POST request with the unique count and logs the response status code.
 
+
 2. `Extensions`
 `Extension`: `Deduplication Across Load Balancers`
 Redis is introduced as a distributed in-memory store.
@@ -54,16 +55,20 @@ Docker Compose simplifies managing the multi-container setup.
 `Framework: Gin`
 Chosen for its lightweight and high-performance HTTP handling.
 Ideal for achieving the 10k requests/second benchmark.
+
 `Concurrency: Go Routines`
 Go routines allow handling multiple requests simultaneously, minimizing latency.
+
 `Data Store: Redis`
 Redis is used for distributed deduplication because of its:
 In-memory data store for high-speed operations.
 Atomic operations for accurate deduplication.
 Built-in TTL support for efficient memory management.
+
 `Streaming: Kafka`
 Kafka decouples the service's processing and external consumers, ensuring scalability.
 Reliable, high-throughput distributed system for real-time data processing.
+
 `Containerization: Docker`
 Simplifies deployment and dependency management.
 Ensures consistent environment across development, testing, and production.
